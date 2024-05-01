@@ -1,0 +1,141 @@
+.nav__left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.nav__right {
+  min-block-size: 100vh;
+  inline-size: 67.8%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40.774227142333984px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-block: 2rem;
+  counter-reset: count -1;
+  transform: translate(100%);
+  transition: 350ms ease;
+  z-index: 1;
+}
+
+.nav__right.open {
+  transform: translate(0);
+}
+
+.nav__item {
+  font: var(--nav-text);
+  letter-spacing: 2.7px;
+  color: rgb(var(--white));
+  padding-block: 0.8rem;
+  padding-inline-start: 2rem;
+  position: relative;
+}
+
+a.nav__item::before {
+  content: "0" counter(count) "";
+  font-weight: bold;
+  margin-inline-end: 0.6875rem;
+  counter-increment: count;
+}
+
+a.nav__item::after {
+  content: "";
+  inline-size: 0.25rem;
+  block-size: 100%;
+  display: block;
+  background-color: unset;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+a.nav__item.router-link-exact-active::after {
+  background-color: rgb(var(--white));
+}
+
+.nav__wrapper .btn-close {
+  text-align: end;
+  padding-inline-end: 2rem;
+}
+
+.nav__logo img {
+  vertical-align: middle;
+}
+
+@media (min-width: 600px) {
+  .nav__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav__item.btn-open {
+    display: none;
+  }
+
+  .nav__item.btn-close {
+    display: none;
+  }
+
+  .nav__right {
+    position: static;
+    min-block-size: auto;
+    flex-direction: row;
+    inline-size: auto;
+    transform: translate(0);
+    gap: 37px;
+
+    padding: 36px 46px 0;
+  }
+
+  .nav__item {
+    padding: 0;
+  }
+
+  a.nav__item::before {
+    display: none;
+  }
+
+  a.nav__item::after {
+    top: unset;
+    bottom: 0;
+    right: none;
+    inline-size: 100%;
+    block-size: 0.25rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav {
+    margin-block-start: 40px;
+  }
+
+  .nav__right {
+    inline-size: 57vw;
+    justify-content: center;
+  }
+
+  a.nav__item::before {
+    display: inline-block;
+  }
+
+  .nav__right::before {
+    content: "";
+    block-size: 2px;
+    display: block;
+    position: absolute;
+    left: 0;
+    inline-size: 50%;
+    background: rgb(var(--white) / 30%);
+    transform: translateX(-95%);
+    top: 50%;
+  }
+
+  a.nav__item:not(.router-link-exact-active):hover::after {
+    background-color: rgb(var(--white) / 40%);
+  }
+}

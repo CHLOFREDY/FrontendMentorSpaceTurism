@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow&family=Bellefair&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+:root {
+  --dark-blue: 11 13 23;
+  --light-blue: 208 214 249;
+  --white: 255 255 255;
+
+  --font-bellefair: "Bellefair";
+  --font-barlow-condensed: "Barlow Condensed";
+  --font-barlow: "Barlow";
+
+  --heading-1: 150px var(--font-bellefair);
+  --heading-2: 100px var(--font-bellefair);
+  --heading-3: 56px var(--font-bellefair);
+  --heading-4: 32px var(--font-bellefair);
+  --heading-5: 28px var(--font-barlow-condensed);
+  --subheading-1: 28px var(--font-bellefair);
+  --subheading-2: 14px var(--font-barlow-condensed);
+  --nav-text: 16px var(--font-barlow-condensed);
+  --paragraph: 16px var(--font-barlow-condensed);
+
+  --text-body: 18px var(--font-barlow);
+}
+
+body {
+  background-color: rgb(13 16 25);
+  font: var(--text-body);
+  line-height: 32px;
+  color: rgb(var(--white));
+}
+
+h1 {
+  font: var(--heading-1);
+}
+
+h2 {
+  font: var(--heading-2);
+}
+
+h3 {
+  font: var(--heading-3);
+}
+
+h4 {
+  font: var(--heading-4);
+}
+
+h5 {
+  font: var(--heading-5);
+  letter-spacing: 4.725px;
+}
+
+.sub-h1 {
+  font: var(--subheading-1);
+}
+
+.sub-h2 {
+  font: var(--subheading-2);
+  letter-spacing: 2.362px;
+}
+
+.debugger,
+.debugger > * {
+  outline: 1px solid red;
+}
